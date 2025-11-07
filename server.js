@@ -1,7 +1,9 @@
 // server.js
 const express = require('express');
 const app = express();
-const PORT = 3000;
+
+// Use the port provided by Plesk, fallback to 3000 for local testing
+const PORT = process.env.PORT || 3000;
 
 // Basic route
 app.get('/', (req, res) => {
@@ -10,5 +12,5 @@ app.get('/', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
+  console.log(`✅ Server is running on port ${PORT}`);
 });
